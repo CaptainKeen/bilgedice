@@ -1,0 +1,24 @@
+
+.dice-1 {
+    content: url('images/1.gif')
+}
+
+.dice-2 {
+    content: url('images/2.gif')
+}
+
+.dice-3 {
+    content: url('images/3.gif')
+}
+
+.dice-4 {
+    content: url('images/4.gif')
+}
+
+.dice-5 {
+    content: url('images/5.gif')
+}
+
+.dice-6 {
+    content: url('images/6.gif')
+}
