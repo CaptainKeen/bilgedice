@@ -10,6 +10,7 @@ const opponentHands = [
 ];
 const submitButton = document.querySelector('#submit');
 
+const moveRow = document.querySelector('#move-row');
 const diceDivs = document.querySelectorAll('.dice-container');
 const diceImages = document.querySelectorAll('.dice-image');
 const diceLabels = document.querySelectorAll('.dice-label');
@@ -183,5 +184,6 @@ function showMove(dice, winrate) {
         maximumFractionDigits: 4
     });
     winrateSpan.innerText = `${percentageString} chance to win`;
+    moveRow.scrollIntoView({ behavior: 'instant', block: 'end' });
 
 }

@@ -22,3 +22,8 @@
 .dice-6 {
     content: url('images/6.gif')
 }
+
+.dice-image {
+    width: 40px;
+    height: 40px;
+}
