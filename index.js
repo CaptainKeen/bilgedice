@@ -8,7 +8,9 @@ const opponentHands = [
     document.querySelector('#opponent-hand-2'),
     document.querySelector('#opponent-hand-3')
 ];
+
 const submitButton = document.querySelector('#submit');
+const resetButton = document.querySelector('#reset');
 
 const moveRow = document.querySelector('#move-row');
 const diceDivs = document.querySelectorAll('.dice-container');
@@ -36,7 +38,7 @@ submitButton.addEventListener('click', async event => {
 
     const [state, board] = parseInput();
 
-    submitButton.disabled = true;
+    disableButtons();
     clearMove();
 
     const [move, ev] = await solve(state, board);
@@ -70,7 +72,19 @@ submitButton.addEventListener('click', async event => {
         }
         showMove(orderedKept, ev);
     }
-    submitButton.disabled = false;
+    enableButtons();
+
+});
+
+resetButton.addEventListener('click', event => {
+
+    const inputs = [playerRolls, playerHand, ...opponentHands]
+    for (const input of inputs) {
+        input.value = '';
+        input.classList.remove('is-invalid');
+    }
+    clearMove();
+    playerRolls.focus();
 
 });
 
@@ -186,4 +200,14 @@ function showMove(dice, winrate) {
     winrateSpan.innerText = `${percentageString} chance to win`;
     moveRow.scrollIntoView({ behavior: 'instant', block: 'end' });
 
+}
+
+function disableButtons() {
+    submitButton.disabled = true;
+    resetButton.disabled = true;
+}
+
+function enableButtons() {
+    submitButton.disabled = false;
+    resetButton.disabled = false;
 }

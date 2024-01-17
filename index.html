@@ -49,7 +49,7 @@
                             <label for="opponent-hand-2" class="form-label">Grimtooth's Hand</label>
                             <input id="opponent-hand-2" class="form-control dice-input">
                             <div class="invalid-feedback">
-                                Grimtooth must have the same number of dice you.
+                                Grimtooth must have the same number of dice as you.
                             </div>
                         </div>
                         <div class="mb-3">
@@ -64,8 +64,11 @@
             </form>
 
             <div class="row my-2">
-                <div class="col">
+                <div class="col d-flex justify-content-end">
                     <button id="submit" class="btn btn-lg btn-primary">Submit</button>
+                </div>
+                <div class="col d-flex justify-content-start">
+                    <button id="reset" class="btn btn-lg btn-warning">Reset</button>
                 </div>
             </div>
 
